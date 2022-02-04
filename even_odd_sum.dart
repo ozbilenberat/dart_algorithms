@@ -18,7 +18,7 @@ String textCreate() {
     if (i.isEven) {
       evenNumbers.add(i);
       evenNumberSum = i + evenNumberSum;
-    } else if (i.isOdd) {
+    } else {
       oddNumbers.add(i);
       oddNumberSum = i + oddNumberSum;
     }

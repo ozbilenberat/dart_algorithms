@@ -9,7 +9,7 @@ void main() {
     if (i.isEven) {
       evenTransCount++;
       evenNumberSum = i + evenNumberSum;
-    } else if (i.isOdd) {
+    } else {
       oddTransCount++;
       oddNumberSum = oddNumberSum + i;
     }
