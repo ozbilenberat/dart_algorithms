@@ -4,22 +4,19 @@ import 'dart:io';
 /// Verilen sayıdan 1'e kadar olan sayıları ekrana yan yana ekrana yazdırma
 void main() {
   List<int> numbers = [];
-  int targetNumber;
-  print('lütfen bir tamsayı giriniz');
+  int targetNumber = 0;
+
   while (1 == 1) {
     try {
+      print('lütfen bir tamsayı giriniz');
       targetNumber = int.parse(stdin.readLineSync()!);
-      if (targetNumber is int) {
-        //if kullanamdan içerideki while girmiyor
-        while (targetNumber != 0) {
-          numbers.add(targetNumber);
-          targetNumber < 0 ? targetNumber++ : targetNumber--;
-        }
-        print(numbers.toString().replaceAll(RegExp(r'^\[|,|\]'), ''));
-        break;
-      }
-    } on Exception {
-      print('tam sayı girerek yeniden deneyin');
-    }
+      break;
+      // ignore: empty_catches
+    } catch (e) {}
   }
+  while (targetNumber != 0) {
+    numbers.add(targetNumber);
+    targetNumber < 0 ? targetNumber++ : targetNumber--;
+  }
+  print(numbers.toString().replaceAll(RegExp(r'^\[|,|\]'), ''));
 }

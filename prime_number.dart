@@ -3,20 +3,25 @@ algoritma örneği
 */
 
 void main() {
-  print(primeNumbers(10, 200));
+  print(primeNumbers(5, 200));
 }
 
 List<int> primeNumbers(int number1, int number2) {
   List<int> allprimeNumbers = [];
 
-  for (number1; number1 < number2; number1++) {
-    for (int n = 2; n < number2; n++) {
-      if (number1 % n == 0) {
+  for (int i = number1; i < number2; i++) {
+    bool isPrime = true;
+
+    for (int n = 2; n < i; n++) {
+      if (i % n == 0) {
+        isPrime = false;
+
         break;
       }
-      if ((n == number1 - 1)) {
-        allprimeNumbers.add(number1);
-      }
+    }
+
+    if (isPrime) {
+      allprimeNumbers.add(i);
     }
   }
   return allprimeNumbers;
